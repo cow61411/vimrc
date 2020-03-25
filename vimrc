@@ -18,6 +18,12 @@ Plugin 'garbas/vim-snipmate'
 " Snippets
 Plugin 'honza/vim-snippets'
 
+" nerdtree
+Plugin 'preservim/nerdtree'
+
+" YCM
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()
 filetype plugin indent on
 "bundle end
@@ -125,3 +131,7 @@ inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
 filetype indent plugin on
 set modeline
 let python_hightlight_all = 1
+
+" nerdTree settings
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd vimenter * NERDTree| wincmd p
